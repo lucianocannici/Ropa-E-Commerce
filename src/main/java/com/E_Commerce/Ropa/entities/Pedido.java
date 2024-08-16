@@ -31,7 +31,7 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name="idProducto", insertable=false, updatable=false)
-    private Proucto producto;
+    private Producto producto;
 
     @ManyToOne
     @JoinColumn(name="idCarrito", insertable=false, updatable=false)

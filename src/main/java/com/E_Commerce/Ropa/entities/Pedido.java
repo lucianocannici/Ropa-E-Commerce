@@ -29,11 +29,11 @@ public class Pedido {
     private int idCarrito;
     private int cantidad;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name="idProducto", insertable=false, updatable=false)
     private Proucto producto;
 
     @ManyToOne
     @JoinColumn(name="idCarrito", insertable=false, updatable=false)
-    private Carrito carrito; */
+    private Carrito carrito; 
 }

@@ -1,13 +1,16 @@
-package com.E_Commerce.Ropa.service.impl;
+package com.E_Commerce.Ropa.service.Impl;
 
 import java.util.List;
 
 import com.E_Commerce.Ropa.dto.UsuarioDto;
+import com.E_Commerce.Ropa.entities.Usuario;
 import com.E_Commerce.Ropa.repository.UsuarioRepository;
 import com.E_Commerce.Ropa.service.UsuarioService;
 
+import jakarta.persistence.EntityNotFoundException;
+
 public class UsuarioServiceImpl implements UsuarioService {
-    
+
     UsuarioRepository usuarioRepository;
 
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
@@ -15,33 +18,70 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<UsuarioDto> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public List<Usuario> findAll() {
+        List<Usuario> getList = usuarioRepository.findAll();
+        if (getList == null || getList.isEmpty()) {
+            throw new EntityNotFoundException("No hay datos para mostrar!");
+        }
+        return getList;
     }
 
     @Override
-    public UsuarioDto save(UsuarioDto usuarioDto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public Usuario save(UsuarioDto usuarioDto) {
+        Usuario usuario = Usuario.builder()
+                .id(usuarioDto.getId())
+                .nombre(usuarioDto.getNombre())
+                .apellido(usuarioDto.getApellido())
+                .mail(usuarioDto.getMail())
+                .password(usuarioDto.getPassword())
+                .telefono(usuarioDto.getTelefono())
+                .build();
+        return usuarioRepository.save(usuario);
+
     }
 
     @Override
     public UsuarioDto findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        Usuario usuario = usuarioRepository.findById(id).orElseThrow(null);
+        UsuarioDto usuarioDto = UsuarioDto.builder()
+                .id(usuario.getId())
+                .nombre(usuario.getNombre())
+                .apellido(usuario.getApellido())
+                .mail(usuario.getMail())
+                .password(usuario.getPassword())
+                .telefono(usuario.getTelefono())
+                .build();
+        return usuarioDto;
     }
 
     @Override
-    public UsuarioDto delete(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public UsuarioDto deleteById(Integer id) {
+        Usuario usuario = usuarioRepository.findById(id).orElseThrow(null);
+        UsuarioDto usuarioDto = UsuarioDto.builder()
+                .id(usuario.getId())
+                .nombre(usuario.getNombre())
+                .apellido(usuario.getApellido())
+                .mail(usuario.getMail())
+                .password(usuario.getPassword())
+                .telefono(usuario.getTelefono())
+                .build();
+        usuarioRepository.deleteById(id);
+        return usuarioDto;
     }
 
     @Override
-    public UsuarioDto update(Integer id, UsuarioDto usuarioDto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    public Usuario update(Integer id, UsuarioDto usuarioDto) {
+        Usuario usuario = usuarioRepository.findById(id).orElseThrow(null);
+        usuarioDto.setId(id);
+        usuario = Usuario.builder()
+                         .id(usuarioDto.getId())
+                         .nombre(usuarioDto.getNombre())
+                         .apellido(usuarioDto.getApellido())
+                         .mail(usuarioDto.getMail())
+                         .password(usuarioDto.getPassword())
+                         .telefono(usuarioDto.getTelefono())
+                         .build();
+        return usuarioRepository.save(usuario);
     }
-    
+
 }

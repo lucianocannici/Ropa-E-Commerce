@@ -1,13 +1,15 @@
 package com.E_Commerce.Ropa.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import java.io.Serializable;
 
-@Getter
-@Setter
+import lombok.Builder;
+import lombok.Data;
+import lombok.ToString;
+
+@Data
+@ToString
 @Builder
-public class PedidoDto {
+public class PedidoDto implements Serializable{
     private Integer id;
     private Integer idProducto;
     private Integer idCarrito;

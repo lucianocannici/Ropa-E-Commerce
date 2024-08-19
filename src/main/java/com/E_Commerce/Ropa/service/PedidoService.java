@@ -3,17 +3,18 @@ package com.E_Commerce.Ropa.service;
 import java.util.List;
 
 import com.E_Commerce.Ropa.dto.PedidoDto;
+import com.E_Commerce.Ropa.entities.Pedido;
 
 public interface PedidoService {
 
-    List<PedidoDto> findAll();
+    List<Pedido> findAll();
 
-    PedidoDto save(PedidoDto pedidoDto);
+    Pedido save(PedidoDto pedidoDto);
 
     PedidoDto findById(Integer id);
 
-    PedidoDto delete(Integer id);
+    PedidoDto deleteById(Integer id);
 
-    PedidoDto update (Integer id, PedidoDto pedidoDto);
+    Pedido update (Integer id, PedidoDto pedidoDto);
     
 }

@@ -1,18 +1,19 @@
 package com.E_Commerce.Ropa.dto;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.ToString;
 
-@Getter
-@Setter
+@Data
+@ToString
 @Builder
-public class UsuarioDto {
+public class UsuarioDto implements Serializable {
     private Integer id;
-    private Integer idDireccion;
-    private Integer idUsuario;
-    private LocalDateTime fecha;
-    private double total;
+    private String nombre;
+    private String apellido;
+    private String mail;
+    private String password;
+    private String telefono;
 }

@@ -3,17 +3,18 @@ package com.E_Commerce.Ropa.service;
 import java.util.List;
 
 import com.E_Commerce.Ropa.dto.UsuarioDto;
+import com.E_Commerce.Ropa.entities.Usuario;
 
 public interface UsuarioService {
 
-    List<UsuarioDto> findAll();
+    List<Usuario> findAll();
     
-    UsuarioDto save(UsuarioDto usuarioDto);
+    Usuario save(UsuarioDto usuarioDto);
 
     UsuarioDto findById (Integer id);
 
-    UsuarioDto delete (Integer id);
+    UsuarioDto deleteById (Integer id);
 
-    UsuarioDto update (Integer id, UsuarioDto usuarioDto);
+    Usuario update (Integer id, UsuarioDto usuarioDto);
 
 }

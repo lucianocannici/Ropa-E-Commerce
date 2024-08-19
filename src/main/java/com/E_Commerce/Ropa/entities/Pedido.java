@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,17 +18,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name="pedido")
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable= false)
-    private int id;
+    private Integer id;
     @Column(name="idProducto")
-    private int idProducto;
+    private Integer idProducto;
     @Column(name="idCarrito")
-    private int idCarrito;
-    private int cantidad;
+    private Integer idCarrito;
+    private Integer cantidad;
 
     @ManyToOne
     @JoinColumn(name="idProducto", insertable=false, updatable=false)

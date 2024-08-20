@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
+@Builder // sirve para poder crear objetos de una manenera mas linda (antes Pedido pedido1 = new Pedido(constructor))
 @Table(name="pedido")
 public class Pedido {
     @Id

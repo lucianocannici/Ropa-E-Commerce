@@ -10,13 +10,14 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
  
 import lombok.AllArgsConstructor; //se importaron las librerias de lombok pero igual no funciona, comprobar que funcione
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor; 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor //aca no me toma error pero no me figura que funcione
-
+@Builder 
 @Entity //especifica la creacion de una entidad
 @Table(name="Producto") //los obj de esta clase se guardan en la tabla Producto, si no existe se crea automaticamente
 public class Producto {

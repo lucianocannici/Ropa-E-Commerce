@@ -1,4 +1,4 @@
-package com.E_Commerce.Ropa.service.Impl;
+package com.E_Commerce.Ropa.service.impl;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class PedidoServiceImpl implements PedidoService{
     @Override
     public Pedido save(PedidoDto pedidoDto) {
         
-        Pedido pedido = Pedido.builder()
+        Pedido pedido = Pedido.builder()                                // antes con carlos: Pedido pedido1 = new Pedido(constructor), ahora con builder lo puedo escriir mas prolijo, asi:
                               .id(pedidoDto.getId())
                               .idProducto(pedidoDto.getIdProducto())
                               .idCarrito(pedidoDto.getIdCarrito())

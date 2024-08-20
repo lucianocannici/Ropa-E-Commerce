@@ -7,13 +7,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor //aca no me toma error pero no me figura que funcione, comprobar que funcione
-
+@Builder 
 @Entity //especifica la creacion de una entidad
 @Table(name="Categoria") //los obj de esta clase se guardan en la tabla Categoria, si no existe se crea automaticamente
 public class Categoria {

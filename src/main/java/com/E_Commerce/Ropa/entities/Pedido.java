@@ -38,4 +38,6 @@ public class Pedido {
     @ManyToOne
     @JoinColumn(name="idCarrito", insertable=false, updatable=false)
     private Carrito carrito; 
+
+    
 }

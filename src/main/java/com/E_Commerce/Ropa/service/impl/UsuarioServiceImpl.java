@@ -2,13 +2,15 @@ package com.E_Commerce.Ropa.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.E_Commerce.Ropa.dto.UsuarioDto;
 import com.E_Commerce.Ropa.entities.Usuario;
 import com.E_Commerce.Ropa.repository.UsuarioRepository;
 import com.E_Commerce.Ropa.service.UsuarioService;
 
 import jakarta.persistence.EntityNotFoundException;
-
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
     UsuarioRepository usuarioRepository;

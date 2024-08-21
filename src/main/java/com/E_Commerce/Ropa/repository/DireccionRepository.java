@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.E_Commerce.Ropa.entities.Direccion;
 @Repository
-public interface DireccionRepository extends JpaRepository<Integer, Direccion>{
+public interface DireccionRepository extends JpaRepository<Direccion, Integer>{
     
 }

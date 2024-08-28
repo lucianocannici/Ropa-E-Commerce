@@ -26,7 +26,9 @@ public class Carrito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)// auto-increment
     @Column(unique= true, nullable=false)//siguiente dato es unico y no puede estar vacio
     private Integer id;
+    @Column(insertable=false, updatable=false)
     private Integer idDireccion;
+    @Column(insertable=false, updatable=false)
     private Integer idUsuario;
     @Column(name = "fecha_Hora_PedidoConfirmado")
     private LocalDateTime fecha;

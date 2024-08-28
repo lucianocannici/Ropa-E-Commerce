@@ -25,9 +25,9 @@ public class Producto {
     
     @Id //el siguiente campo ("id") es primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //el siguiente campo ("id") es auto_incremental
-    @Column(unique = true, nullable = false) // esto estaba en la clase de Carlos. En algunos videos lo ponen en cada campo. Aca hace falta?
-    
+    @Column(unique = true, nullable = false) // esto estaba en la clase de Carlos. En algunos videos lo ponen en cada campo. Aca hace falta?    
     private Integer id; //no uso int, no uso primitivos
+    @Column(insertable=false, updatable=false)
     private Integer idCategoria;
     private String nombre;
     private String talle;

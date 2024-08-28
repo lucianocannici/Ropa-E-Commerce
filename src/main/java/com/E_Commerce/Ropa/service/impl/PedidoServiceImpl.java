@@ -73,8 +73,7 @@ public class PedidoServiceImpl implements PedidoService{
     public Pedido update(Integer id, PedidoDto pedidoDto) {
         Pedido pedido = pedidoRepository.findById(id).orElseThrow(null);
         pedidoDto.setId(id);
-        pedido = Pedido.builder()
-                       .id(pedidoDto.getId())
+        pedido = Pedido.builder()                       
                        .idProducto(pedidoDto.getIdProducto())
                        .idCarrito(pedidoDto.getIdCarrito())
                        .cantidad(pedidoDto.getCantidad())

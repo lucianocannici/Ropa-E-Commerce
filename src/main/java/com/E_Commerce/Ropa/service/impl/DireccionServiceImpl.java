@@ -18,13 +18,7 @@ public class DireccionServiceImpl implements DireccionService {
     }
 
     @Override
-    public DireccionDto deletebyId(Integer Id) {
-        
-        return null;
-    }
-
-    @Override
-    public List<Direccion> findAll() {
+    public List<Direccion> findAll() {//Lista todas las direcciones
         List<Direccion> getList= direccionRepository.findAll();
         if (getList == null || getList.isEmpty()) {
             throw new EntityNotFoundException("No hay datos para mostrar!");
@@ -33,24 +27,7 @@ public class DireccionServiceImpl implements DireccionService {
     }
 
     @Override
-    public DireccionDto findById(Integer id) {
-        Direccion direccion = direccionRepository.findById(id).orElseThrow(null);
-        DireccionDto direccionDto = DireccionDto.builder()
-                                    .id(direccion.getId())
-                                    .pais(direccion.getPais())
-                                    .provincia(direccion.getProvincia())
-                                    .localidad(direccion.getLocalidad())
-                                    .calle(direccion.getCalle())
-                                    .altura(direccion.getAltura())
-                                    .piso(direccion.getPiso())
-                                    .departamento(direccion.getDepartamento())
-                                    .descripcion(direccion.getDescripcion())
-                                    .build();
-        return direccionDto;
-    }
-
-    @Override
-    public Direccion save(DireccionDto direccionDto) {
+    public Direccion save(DireccionDto direccionDto) {//Guarda direccion
         Direccion direccion = Direccion.builder()
                                .id(direccionDto.getId())
                                .pais(direccionDto.getPais())
@@ -67,9 +44,60 @@ public class DireccionServiceImpl implements DireccionService {
     }
 
     @Override
-    public DireccionDto update(Integer Id, DireccionDto direccionDto) {
+    public DireccionDto findById(Integer id) {// Para encontrar direccion mediante ID
+        Direccion direccion = direccionRepository.findById(id).orElseThrow(null);
+        DireccionDto direccionDto = DireccionDto.builder()
+                                    .id(direccion.getId())
+                                    .pais(direccion.getPais())
+                                    .provincia(direccion.getProvincia())
+                                    .localidad(direccion.getLocalidad())
+                                    .calle(direccion.getCalle())
+                                    .altura(direccion.getAltura())
+                                    .piso(direccion.getPiso())
+                                    .departamento(direccion.getDepartamento())
+                                    .descripcion(direccion.getDescripcion())
+                                    .build();
+        return direccionDto;
+    }
+
+
+    @Override
+    public DireccionDto deletebyId(Integer id) {// Borrar direccion Mediante ID
+        Direccion direccion = direccionRepository.findById(id).orElseThrow(null);
+        DireccionDto direccionDto = DireccionDto.builder()
+                                    .id(direccion.getId())
+                                    .pais(direccion.getPais())
+                                    .provincia(direccion.getProvincia())
+                                    .localidad(direccion.getLocalidad())
+                                    .calle(direccion.getCalle())
+                                    .altura(direccion.getAltura())
+                                    .piso(direccion.getPiso())
+                                    .departamento(direccion.getDepartamento())
+                                    .descripcion(direccion.getDescripcion())
+                                    .build();  
+
+        direccionRepository.deleteById(id);
+        return direccionDto;
+    }
+  
+    @Override
+    public Direccion update(Integer id, DireccionDto direccionDto) {// Actualiza datos
+         Direccion direccion = direccionRepository.findById(id).orElseThrow(null);
+        direccionDto.setId(id);
+        direccion = Direccion.builder()                       
+                    .id(direccionDto.getId())
+                    .pais(direccionDto.getPais())
+                    .provincia(direccionDto.getProvincia())
+                    .localidad(direccionDto.getLocalidad())
+                    .calle(direccionDto.getCalle())
+                    .altura(direccionDto.getAltura())
+                    .piso(direccionDto.getPiso())
+                    .departamento(direccionDto.getDepartamento())
+                    .descripcion(direccionDto.getDescripcion())
+                    .build();
+
+        return direccionRepository.save(direccion);
         
-        return null;
     }
 
     

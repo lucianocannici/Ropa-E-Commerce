@@ -15,5 +15,5 @@ public interface DireccionService {
     
     DireccionDto deletebyId(Integer id);
 
-    DireccionDto update(Integer id, DireccionDto direccionDto);
+    Direccion update(Integer id, DireccionDto direccionDto);
 }

@@ -1,6 +1,9 @@
 package com.E_Commerce.Ropa.service;
 
-import java.util.List; 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.E_Commerce.Ropa.dto.CategoriaDto; 
 import com.E_Commerce.Ropa.entities.Categoria; 
  

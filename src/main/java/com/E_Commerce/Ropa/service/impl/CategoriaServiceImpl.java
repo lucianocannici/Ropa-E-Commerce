@@ -2,6 +2,8 @@ package com.E_Commerce.Ropa.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.E_Commerce.Ropa.dto.CategoriaDto; 
 import com.E_Commerce.Ropa.entities.Categoria; 
 import com.E_Commerce.Ropa.repository.CategoriaRepository; 
@@ -9,7 +11,7 @@ import com.E_Commerce.Ropa.service.CategoriaService;
 
 import jakarta.persistence.EntityNotFoundException;
  
-
+@Service
 public class CategoriaServiceImpl implements CategoriaService{
     
     CategoriaRepository categoriaRepository;

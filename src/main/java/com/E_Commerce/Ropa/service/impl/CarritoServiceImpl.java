@@ -2,6 +2,8 @@ package com.E_Commerce.Ropa.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.E_Commerce.Ropa.dto.CarritoDto;
 import com.E_Commerce.Ropa.entities.Carrito;
 import com.E_Commerce.Ropa.repository.CarritoRepository;
@@ -9,6 +11,7 @@ import com.E_Commerce.Ropa.service.CarritoService;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Service
 public class CarritoServiceImpl implements CarritoService{
 
      CarritoRepository carritoRepository;

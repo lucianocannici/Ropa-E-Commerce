@@ -32,28 +32,28 @@ public class CarritoController {
             this. carritoService =  carritoService;
     }
     
-    @GetMapping("/ carrito")
+    @GetMapping("/carrito")
     public ResponseEntity<List< Carrito>> get(){
         return new ResponseEntity<>( carritoService.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping("/ carrito")
+    @PostMapping("/carrito")
     public ResponseEntity< Carrito> save(@RequestBody  CarritoDto  carritoDto){
         return new ResponseEntity<>( carritoService.save( carritoDto), HttpStatus.OK);
     }
 
-    @GetMapping("/ carrito/{id}")
+    @GetMapping("/carrito/{id}")
     public ResponseEntity<?> get(@PathVariable Integer id){
          CarritoDto  carritoDto =  carritoService.findbyId(id);
         return new ResponseEntity<>( carritoDto, HttpStatus.OK);
     }
 
-    @DeleteMapping("/ carrito/{id}")
+    @DeleteMapping("/carrito/{id}")
     public ResponseEntity< CarritoDto> delete(@PathVariable Integer id){
         return new ResponseEntity<>( carritoService.deletebyId(id), HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/ carrito/{id}")
+    @PutMapping("/carrito/{id}")
     public ResponseEntity< Carrito> update(@PathVariable Integer id, @RequestBody  CarritoDto  carritoDto){
         return new ResponseEntity<>( carritoService.update(id,  carritoDto), HttpStatus.OK);
     }

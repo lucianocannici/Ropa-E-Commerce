@@ -2,6 +2,8 @@ package com.E_Commerce.Ropa.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.E_Commerce.Ropa.dto.DireccionDto;
 import com.E_Commerce.Ropa.entities.Direccion;
 import com.E_Commerce.Ropa.repository.DireccionRepository;
@@ -9,6 +11,7 @@ import com.E_Commerce.Ropa.service.DireccionService;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Service
 public class DireccionServiceImpl implements DireccionService {
 
     DireccionRepository direccionRepository;

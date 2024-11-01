@@ -15,6 +15,6 @@ public interface PedidoService {
 
     PedidoDto deleteById(Integer id);
 
-    Pedido update (Integer id, PedidoDto pedidoDto);
+    Pedido update(Integer id, PedidoDto pedidoDto);
     
 }

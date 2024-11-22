@@ -5,7 +5,7 @@ Una API Rest con la finalidad de ser utilizable en un e-commerce de ropa.
 # Como visualizarlo:
 - Descargar el proyecto en rar o clonarlo en un repositorio local
 - Abrir el proyecto con IDE de preferencia
-- Posicionarse en "TuComercioApplication.java" y darle click al icono "Run java" con forma de <img src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="play" width="30" height="30">
+- Posicionarse en "TuComercioApplication.java" y darle click al icono "Run java" con forma de <a> <img src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png"  width="30" height="30"/> </a>
 - Otra opcion. A través de consola ejecutar el siguiente comando: mvnw spring-boot:run
 - Dirigerse al link: http://localhost:8095/swagger-ui/index.html#/
 

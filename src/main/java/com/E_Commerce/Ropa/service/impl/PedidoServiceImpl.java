@@ -67,6 +67,7 @@ public class PedidoServiceImpl implements PedidoService{
                                        .cantidad(pedido.getCantidad())
                                        .build();
         pedidoRepository.deleteById(id);
+        
         return pedidoDto;
     }
 

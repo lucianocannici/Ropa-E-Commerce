@@ -1,7 +1,6 @@
 package com.E_Commerce.Ropa.entities;
 
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,6 +40,5 @@ public class Carrito {
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     Usuario usuario;
-
-
+    
 }
